@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './reducers/index';
 import App from './App';
 
-let storeWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
+const storeWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
 
 ReactDOM.render(<Provider store={storeWithMiddleware(rootReducer)}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();

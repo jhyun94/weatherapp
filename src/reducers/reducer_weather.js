@@ -1,8 +1,10 @@
 import { GET_WEATHER } from '../actions/index';
 
-export default function(state =  null, action) {
-	if ( GET_WEATHER == action.type) {
-		return [action.payload.data, ...state]
+export default function(state = [], action) {
+
+	switch(action.type){
+		case GET_WEATHER:
+			return [action.payload.data, ...state]
 	}
 
 	return state
