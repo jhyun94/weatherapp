@@ -1,8 +1,8 @@
-const GET_WEATHER = 'get_weather';
+import { GET_WEATHER } from '../actions/index';
 
-export default function(state =  null, payload) {
-	if ( GET_WEATHER == payload.type) {
-		console.log(payload);
+export default function(state =  null, action) {
+	if ( GET_WEATHER == action.type) {
+		return [action.payload.data, ...state]
 	}
 
 	return state
