@@ -13,8 +13,13 @@ class WeatherList extends Component {
 
 	weather(){
 		return this.props.weathers.map( (weather) => {
+			const temp = weather.list.map( (x) => {
+				return x.main.temp
+			})
 			return (
-				<li key={weather.city.name}>{weather.city.name}</li>
+				<li key={weather.city.name}>
+					<Chart temp={temp}/>
+				</li>
 			)
 		})
 	}
